@@ -1,14 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3797925344174476"
+     crossorigin="anonymous"></script>
+     
   <meta charset="UTF-8">
   <title>4º de ESO - Apuntes Salesianos</title>
   <link rel="stylesheet" href="../styles.css">
-  <link rel="icon" href="../image_files/icon.ico" type="image/png">
+  <link rel="icon" href="image_files/icon.ico" type="image/png">
+  <style>
+    .ingles {
+      border-left: 5px solid #1E90FF; /* Azul */
+      padding-left: 10px;
+    }
+    .lengua {
+      border-left: 5px solid #32CD32; /* Verde */
+      padding-left: 10px;
+    }
+    .matematicas {
+      border-left: 5px solid #00008B; /* Azul oscuro */
+      padding-left: 10px;
+    }
+    .geografia {
+      border-left: 5px solid #8B4513; /* Marrón */
+      padding-left: 10px;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>Apuntes Salesianos</h1>
+    <h1>Apuntes de 4º de ESO</h1>
     <nav>
       <ul>
         <li><a href="../index.html">Inicio</a></li>
@@ -20,49 +41,28 @@
     </nav>
   </header>
   <main>
+    <section class="ingles">
+      <h2>Inglés</h2>
+      <p>Apuntes y recursos para la asignatura de Inglés...</p>
+    </section>
     
-    <section>
-      <h2>Apuntes de 4º de ESO</h2>
-      <form id="uploadForm" enctype="multipart/form-data">
-        <input type="file" id="imageInput" accept="image/*" required>
-        <button type="submit">Subir Imagen</button>
-      </form>
-      <div id="gallery"></div>
-      
-      <script>
-      document.getElementById("uploadForm").addEventListener("submit", async function(event) {
-        event.preventDefault();
-        const fileInput = document.getElementById("imageInput");
-        
-        if (fileInput.files.length === 0) {
-          alert("Selecciona una imagen antes de subir.");
-          return;
-        }
-      
-        const formData = new FormData();
-        formData.append("image", fileInput.files[0]);
-      
-        try {
-          const response = await fetch("http://localhost:3000/upload", {
-
-            method: "POST",
-            body: formData
-          });
-      
-          if (!response.ok) {
-            throw new Error(`Error en la subida: ${await response.text()}`);
-          }
-      
-          const imgUrl = await response.text();
-          console.log("Imagen subida con éxito:", imgUrl); // Verifica la URL devuelta
-          const img = document.createElement("img");
-          img.src = imgUrl;
-          img.style.maxWidth = "200px"; // Ajusta el tamaño de la imagen subida
-          document.getElementById("gallery").appendChild(img);
-        } catch (error) {
-          console.error("Error al subir la imagen:", error);
-          alert("Error al subir la imagen.");
-        }
-      });
-      </script>
-      
+    <section class="lengua">
+      <h2>Lengua</h2>
+      <p>Apuntes y recursos para la asignatura de Lengua...</p>
+    </section>
+    
+    <section class="matematicas">
+      <h2>Matemáticas</h2>
+      <p>Apuntes y recursos para la asignatura de Matemáticas...</p>
+    </section>
+    
+    <section class="geografia">
+      <h2>Geografía</h2>
+      <p>Apuntes y recursos para la asignatura de Geografía...</p>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Apuntes Salesianos</p>
+  </footer>
+</body>
+</html>
