@@ -1,16 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3797925344174476"
-     crossorigin="anonymous"></script>
-
   <meta charset="UTF-8">
   <title>Apuntes Salesianos - ESO</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="image_files/icon.ico" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  
 </head>
 <body>
   <header>
@@ -25,24 +20,78 @@
     </nav>
     <h1>Apuntes Salesianos</h1>
   </header>
-  <main>
-    <section>
-      <h2>1º de ESO</h2>
-      <a href="HTML/primero.html">Ver apuntes de 1º de ESO</a>
+
+  <main class="fade-in">
+    <section class="banner">
+      <h1>Bienvenidos a Apuntes Salesianos</h1>
+      <p>Encuentra todos tus apuntes y recursos aquí.</p>
     </section>
-    <section>
-      <h2>2º de ESO</h2>
-      <a href="HTML/segundo.html">Ver apuntes de 2º de ESO</a>
+
+    <section class="intro">
+      <h2>Sobre Nosotros</h2>
+      <p>Apuntes Salesianos es una plataforma educativa diseñada para ayudar a los estudiantes de ESO a acceder a material de estudio de alta calidad. Nuestros recursos están organizados por cursos y asignaturas para facilitar el aprendizaje.</p>
     </section>
-    <section>
-      <h2>3º de ESO</h2>
-      <a href="HTML/tercero.html">Ver apuntes de 3º de ESO</a>
+
+    <section class="courses">
+      <h2>Cursos Disponibles</h2>
+      <div class="course-grid">
+        <div class="course-item">
+          <h3>1º de ESO</h3>
+          <p>Recursos y apuntes para el primer curso de ESO.</p>
+          <a href="HTML/primero.html" class="button">Ver más</a>
+        </div>
+        <div class="course-item">
+          <h3>2º de ESO</h3>
+          <p>Recursos y apuntes para el segundo curso de ESO.</p>
+          <a href="HTML/segundo.html" class="button">Ver más</a>
+        </div>
+        <div class="course-item">
+          <h3>3º de ESO</h3>
+          <p>Recursos y apuntes para el tercer curso de ESO.</p>
+          <a href="HTML/tercero.html" class="button">Ver más</a>
+        </div>
+        <div class="course-item">
+          <h3>4º de ESO</h3>
+          <p>Recursos y apuntes para el cuarto curso de ESO.</p>
+          <a href="HTML/cuarto.html" class="button">Ver más</a>
+        </div>
+      </div>
     </section>
-    <section>
-      <h2>4º de ESO</h2>
-      <a href="HTML/cuarto.html">Ver apuntes de 4º de ESO</a>
+
+    <section class="news">
+      <h2>Últimas Noticias</h2>
+      <article>
+        <h3>Nuevo material de estudio disponible</h3>
+        <p>Hemos añadido nuevos recursos para las asignaturas de Inglés y Matemáticas. <a href="#">Leer más</a></p>
+      </article>
+      <article>
+        <h3>Actualización de la plataforma</h3>
+        <p>La plataforma ha sido actualizada para mejorar la experiencia del usuario. <a href="#">Leer más</a></p>
+      </article>
+    </section>
+
+    <section class="contact">
+      <h2>Contacto</h2>
+      <form action="#" method="post">
+        <div class="form-group">
+          <label for="name">Nombre</label>
+          <input type="text" id="name" name="name">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email">
+        </div>
+        <div class="form-group">
+          <label for="message">Mensaje</label>
+          <textarea id="message" name="message"></textarea>
+        </div>
+        <div class="form-group">
+          <input type="submit" value="Enviar">
+        </div>
+      </form>
     </section>
   </main>
+
   <footer>
     <p>&copy; 2025 Apuntes Salesianos</p>
   </footer>
