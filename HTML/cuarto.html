@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>4º de ESO - Apuntes Salesianos</title>
   <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" href="../image_files/icon.ico" type="image/png">
 </head>
 <body>
   <header>
@@ -19,19 +20,49 @@
     </nav>
   </header>
   <main>
+    
     <section>
       <h2>Apuntes de 4º de ESO</h2>
-      <form action="/upload" method="post" enctype="multipart/form-data">
-        <input type="file" name="file" required>
-        <button type="submit">Subir</button>
+      <form id="uploadForm" enctype="multipart/form-data">
+        <input type="file" id="imageInput" accept="image/*" required>
+        <button type="submit">Subir Imagen</button>
       </form>
-      <div id="notes">
-        <!-- Aquí se mostrarán los apuntes subidos -->
-      </div>
-    </section>
-  </main>
-  <footer>
-    <p>&copy; 2025 Apuntes Salesianos</p>
-  </footer>
-</body>
-</html>
+      <div id="gallery"></div>
+      
+      <script>
+      document.getElementById("uploadForm").addEventListener("submit", async function(event) {
+        event.preventDefault();
+        const fileInput = document.getElementById("imageInput");
+        
+        if (fileInput.files.length === 0) {
+          alert("Selecciona una imagen antes de subir.");
+          return;
+        }
+      
+        const formData = new FormData();
+        formData.append("image", fileInput.files[0]);
+      
+        try {
+          const response = await fetch("http://localhost:3000/upload", {
+
+            method: "POST",
+            body: formData
+          });
+      
+          if (!response.ok) {
+            throw new Error(`Error en la subida: ${await response.text()}`);
+          }
+      
+          const imgUrl = await response.text();
+          console.log("Imagen subida con éxito:", imgUrl); // Verifica la URL devuelta
+          const img = document.createElement("img");
+          img.src = imgUrl;
+          img.style.maxWidth = "200px"; // Ajusta el tamaño de la imagen subida
+          document.getElementById("gallery").appendChild(img);
+        } catch (error) {
+          console.error("Error al subir la imagen:", error);
+          alert("Error al subir la imagen.");
+        }
+      });
+      </script>
+      
