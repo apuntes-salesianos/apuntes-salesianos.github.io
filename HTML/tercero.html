@@ -20,7 +20,6 @@
     </nav>
   </header>
   <main>
-    
     <section>
       <h2>Apuntes de 3º de ESO</h2>
       <form id="uploadForm" enctype="multipart/form-data">
@@ -43,8 +42,8 @@
         formData.append("image", fileInput.files[0]);
       
         try {
-          const response = await fetch("http://localhost:3000/upload", {
-
+          // Cambia la URL a la dirección pública generada por ngrok
+          const response = await fetch("https://abcd1234.ngrok.io/upload", {
             method: "POST",
             body: formData
           });
@@ -65,4 +64,7 @@
         }
       });
       </script>
-      
+    </section>
+  </main>
+</body>
+</html>
